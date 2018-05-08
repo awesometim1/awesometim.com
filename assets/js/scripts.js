@@ -17,16 +17,25 @@ typeWriter();
 // Navbar Toggle
 function dropdown() {
 	var btn = document.getElementById('hamb');
+	var links = document.getElementById('linksContainer');
+	var mNav = document.getElementById("mainNav");
+	// active hamburger
 	if (btn.className.indexOf("is-active") < 0){
 		btn.className += " is-active";
 	}
 	else {
 		btn.className = "hamburger hamburger--spin"
 	}
-    var x = document.getElementById("mainNav");
-    if (x.className === "navbar") {
-        x.className += " dropdown";
+	// Navbar dropdown
+	if (mNav.className === "navbar") {
+		mNav.className += " dropdown";
+	} else {
+		mNav.className = "navbar";
+	}
+	// Navbar links
+	if (links.className === "links") {
+        links.className += " dropdown";
     } else {
-        x.className = "navbar";
+        links.className = "links";
     }
 }

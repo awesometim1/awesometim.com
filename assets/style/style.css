@@ -8,6 +8,8 @@ body {
 	background-color:white;
 	font-family: eurostile, sans-serif;
 }
+/*Button Outline fix*/
+button:focus {outline:0;}
 /*container*/
 .container {
 	margin-top:15vh;
@@ -20,14 +22,15 @@ nav {
 	overflow:hidden;
 	position:fixed;
 	top:0;
+	-webkit-transition: height 1s ease;
+	-moz-transition: height 1s ease;
+	-o-transition: height 1s ease;
+	transition: height 1s ease;
 }
 nav > img {
 	height:100%;
 	float:left;
 	margin-left:5%;
-}
-.links .icon {
-    display: none;
 }
 .links{
 	float:right;
@@ -54,8 +57,9 @@ nav > img {
 	nav > img {
 		height:15vh;
 	}
-	.links a {
-		display:none;
+	nav {
+		opacity:.92;
+		z-index:5;
 	}
 	#hamb {
 		float:right;
@@ -64,14 +68,11 @@ nav > img {
 		display:block;
 		line-height:16vh;
 	}
-}
-@media screen and (max-width: 900px) {
-	nav.dropdown {
-		height:100vh;
-		width:100vw;
-		position:fixed;
-		opacity:.77;
-		z-index:5;
+	.links{
+		float:none;
+		overflow:hidden;
+		width:100%;
+		margin-top:15vh;
 	}
 	.links a {
 		float:none;
@@ -80,13 +81,26 @@ nav > img {
 		text-align:center;
 	}
 }
-/*Breakpoint for typing script*/
-@media screen and (max-width: 602px) {
-	#type {
-		font-size:5vw;
+/*Dropdown*/
+@media screen and (max-width: 900px) {
+	nav.dropdown {
+		height:100vh;
+		opacity:.92;
+		z-index:5;
+		-webkit-transition: height 1s ease;
+		-moz-transition: height 1s ease;
+		-o-transition: height 1s ease;
+		transition: height 1s ease;
+	}
+	.links.dropdown a:hover {
+		color:grey;
+	}
+	.links.dropdown {
+		height:85vh;
 	}
 }
-@media screen and (max-width: 465px) {
+/*Breakpoint for typing script*/
+@media screen and (max-width: 602px) {
 	#type {
 		font-size:5vw;
 	}
@@ -103,12 +117,12 @@ nav > img {
 .banner {
 	margin-top:20vh;
 	text-align:center;
-	/*Image and text fade in*/
--webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
+/*Image and text fade in*/
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 2s; /* Firefox < 16 */
+	-ms-animation: fadein 2s; /* Internet Explorer */
+	-o-animation: fadein 2s; /* Opera < 12.1 */
+	animation: fadein 2s;
 }
 
 @keyframes fadein {
