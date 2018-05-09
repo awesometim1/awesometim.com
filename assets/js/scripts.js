@@ -48,7 +48,3 @@ window.onscroll = function () {
     }
 };
 
-(function (){
-	navBar.classList.add('nav-transparent');
-})();
-
