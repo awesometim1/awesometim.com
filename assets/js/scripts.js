@@ -2,36 +2,6 @@
 function homepage(){
 	window.location.href = "/"
 }
-// Typing effect
-
-var i = 0;
-var txt = "Hi! I'm Tim and I create AWESOME websites.";
-
-var banner = document.getElementsByClassName('banner')[0];
-var typeTxt = banner.getElementsByTagName('*');
-
-function typer() {
-  if (i < txt.length) {
-    typeTxt[0].innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typer, 50);
-  }
-}
-typer();
-
-
-// function typeWriter(ind, typeList, typeTxt) {
-// 	if (i < typeList[ind].length) {
-// 		typeTxt[ind].innerHTML += typeList[ind].charAt(i);
-// 		i++;
-// 		setTimeout(typeWriter(ind,typeList,typeTxt), 50);
-// 	}
-// }
-// typeWriter(0, typeList, typeTxt);
-// for (var ind = 0; ind < typeList.length; ind ++){
-
-// 	i = 0;
-// }
 
 
 // Navbar Toggle
@@ -82,13 +52,3 @@ window.onscroll = function () {
 	navBar.classList.add('nav-transparent');
 })();
 
-// Navbar transparency fix
-
-function transp() {
-	console.log($('nav').height(), window.innerHeight * .15);
-	if ($('nav').height() <= window.innerHeight * .15) {
-		return true;
-	}
-	return false;
-
-}
