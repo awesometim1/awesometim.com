@@ -297,10 +297,9 @@ nav > img {
 	font-weight:100;
 	font-family:inherit;
 	border-bottom: 1px solid black;
-	margin-bottom:20px;
+	margin-bottom:40px;
 }
 .resumelink {
-	padding-left:20px;
 	font-size:2vw;
 	align-self:flex-start;
 	color:grey;
@@ -318,6 +317,9 @@ nav > img {
 		padding-left:20px;
 		line-height: 5vh;
 	}
+	.resumelink {
+		padding-left:20px;
+	}
 }
 /*Technologies*/
 .technologies {
@@ -334,7 +336,7 @@ nav > img {
 	font-weight:100;
 	font-family:inherit;
 	border-bottom: 1px solid black;
-	margin-bottom:20px;
+	margin-bottom:40px;
 }
 .technologies .technologies-container {
 	font-size:6vw;
@@ -354,8 +356,43 @@ nav > img {
 	padding-top:10vh;
 	width:80vw;
 }
+.projects .projects-container {
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+	flex-wrap:wrap;
+}
 .projects img {
-	border-radius:50%;
+	display: block;
+	max-width:80vw;
+	max-height:60vh;
+	width: auto;
+	height: auto;
+	border: 1px solid black;
+}
+.project {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-bottom:40px;
+}
+.caption {
+	margin-top:40px;
+}
+.project .caption i {
+	font-size:40px;
+	vertical-align:middle;
+	margin-right:10px;
+}
+.project .caption h2{
+	display: inline;
+	vertical-align:middle;
+}
+.project .caption a{
+	text-decoration:none;
+}
+.project .caption a:visited{
+	color:black;
 }
 .projects .projects-title{
 	padding:10px;
@@ -363,7 +400,7 @@ nav > img {
 	font-weight:100;
 	font-family:inherit;
 	border-bottom: 1px solid black;
-	margin-bottom:20px;
+	margin-bottom:40px;
 }
 @media screen and (max-width: 900px) {
 	.projects {
