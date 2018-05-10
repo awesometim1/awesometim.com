@@ -44,7 +44,6 @@ window.onscroll = function () {
     	navBar.classList.remove("nav-colored");
     	navBar.classList.add("nav-transparent");
 
-
     }
 };
 
