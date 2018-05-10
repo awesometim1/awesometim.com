@@ -64,7 +64,7 @@ nav > img {
 	font-size:20px;
 	font-weight:700;
 	padding:15px 20px;
-	border:none;
+	border: 3px solid transparent;
 }
 .links > a:hover {
 	color:lightgrey;

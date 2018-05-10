@@ -36,6 +36,7 @@ function dropdown() {
 var navBar = document.getElementById('mainNav');
 var bodyTag = document.getElementsByClassName('banner')[0];
 var aClick = true;
+var navbarHeight = window.innerHeight * .15;
 
 window.onscroll = function () {
 	"use strict";
@@ -53,15 +54,15 @@ window.onscroll = function () {
     // let about = $('#about-link');
     // let projects = $('#projects-link');
     if (aClick){
-    	if ($(window).scrollTop() >= $('#banner-link').offset().top && $(window).scrollTop() <= $('#about-link').offset().top) {
+    	if ($(window).scrollTop() >= $('#banner-link').offset().top - navbarHeight && $(window).scrollTop() <= $('#about-link').offset().top - navbarHeight) {
     		$('.active').toggleClass('active');
     		$('#banner-a').toggleClass('active');
     	}
-    	else if ($(window).scrollTop() >= $('#about-link').offset().top && $(window).scrollTop() <= $('#projects-link').offset().top){
+    	else if ($(window).scrollTop() >= $('#about-link').offset().top - navbarHeight && $(window).scrollTop() <= $('#projects-link').offset().top - navbarHeight){
     		$('.active').toggleClass('active');
     		$('#about-a').toggleClass('active');
     	}
-    	else if ($(window).scrollTop() >= $('#projects-link').offset().top) {
+    	else if ($(window).scrollTop() >= $('#projects-link').offset().top - navbarHeight) {
     		$('.active').toggleClass('active');
     		$('#projects-a').toggleClass('active');
     	}
@@ -73,13 +74,11 @@ window.onscroll = function () {
 $('a').click(function(){
 	aClick = false;
     $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top+2
-    }, 500);
+        scrollTop: $( $(this).attr('href') ).offset().top - navbarHeight + 2
+    }, 500, function() {
+    	aClick = true;
+    });
     $('.active').toggleClass('active');
     $(this).toggleClass('active');
-    clickChange();
-});
 
-var clickChange = function() {
-	aClick = true;
-}
+});
