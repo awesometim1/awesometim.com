@@ -20,30 +20,66 @@ function dropdown() {
 	if (mNav.className.indexOf("dropdown") < 0) {
 		mNav.className += " dropdown";
 	} else {
-		mNav.className = mNav.className.substring(0, mNav.className.length - 9);
+		let ddind = mNav.className.indexOf(" dropdown");
+		mNav.className = mNav.className.substring(0, ddind) + mNav.className.substring(ddind+9, mNav.className.length);
 	}
 	// Navbar links
-	if (links.className.indexOf("dropdown") < 0) {
+	if (links.className.indexOf(" dropdown") < 0) {
         links.className += " dropdown";
     } else {
-        links.className = links.className.substring(0, links.className.length - 9)
+    	let ddind = links.className.indexOf(" dropdown");
+        links.className = links.className.substring(0, ddind) + links.className.substring(ddind+9, links.className.length);
     }
 }
 
-// Navbar color change
+// Navbar color change and scroll animation designator
 var navBar = document.getElementById('mainNav');
 var bodyTag = document.getElementsByClassName('banner')[0];
+var aClick = true;
 
 window.onscroll = function () {
-    "use strict";
-    if ($(window).scrollTop() >= window.innerHeight * .15 /4) {
-        navBar.classList.add("nav-colored");
-        navBar.classList.remove("nav-transparent");
+	"use strict";
+	var wind = $(window)
+	if ($(window).scrollTop() >= window.innerHeight * .15 /4) {
+		navBar.classList.add("nav-colored");
+		navBar.classList.remove("nav-transparent");
+	}
+	else {
+		navBar.classList.remove("nav-colored");
+		navBar.classList.add("nav-transparent");
+	}
+    // // banner link, about link, projects link
+    // let banner = $('#banner-link');
+    // let about = $('#about-link');
+    // let projects = $('#projects-link');
+    if (aClick){
+    	if ($(window).scrollTop() >= $('#banner-link').offset().top && $(window).scrollTop() <= $('#about-link').offset().top) {
+    		$('.active').toggleClass('active');
+    		$('#banner-a').toggleClass('active');
+    	}
+    	else if ($(window).scrollTop() >= $('#about-link').offset().top && $(window).scrollTop() <= $('#projects-link').offset().top){
+    		$('.active').toggleClass('active');
+    		$('#about-a').toggleClass('active');
+    	}
+    	else if ($(window).scrollTop() >= $('#projects-link').offset().top) {
+    		$('.active').toggleClass('active');
+    		$('#projects-a').toggleClass('active');
+    	}
     }
-    else {
-    	navBar.classList.remove("nav-colored");
-    	navBar.classList.add("nav-transparent");
 
-    }
 };
 
+// Navbar Scroll animation
+$('a').click(function(){
+	aClick = false;
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top+2
+    }, 500);
+    $('.active').toggleClass('active');
+    $(this).toggleClass('active');
+    clickChange();
+});
+
+var clickChange = function() {
+	aClick = true;
+}

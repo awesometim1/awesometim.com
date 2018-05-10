@@ -58,11 +58,13 @@ nav > img {
 	margin-right:7%;
 }
 .links > a {
-	margin-left:50px;
+	margin-left:10px;
 	text-decoration:none;
 	color:#FFF;
 	font-size:20px;
 	font-weight:700;
+	padding:15px 20px;
+	border:none;
 }
 .links > a:hover {
 	color:lightgrey;
@@ -152,6 +154,11 @@ nav > img {
 	.links.dropdown {
 		height:85vh;
 	}
+}
+/*Active Navbar link*/
+.active {
+	border: 3px solid white !important;
+	border-radius:5%;
 }
 /*Banner*/
 .banner {
@@ -274,6 +281,7 @@ nav > img {
 }
 /*About Me*/
 .about {
+	font-family: 'Montserrat', sans-serif;
 	align-self:center;
 	display:flex;
 	align-items:center;
@@ -285,6 +293,7 @@ nav > img {
 	border-radius:50%;
 }
 .about p {
+	text-align:justify;
 	font-family:inherit;
 	font-weight:400;
 	font-size:2vw;
@@ -319,16 +328,55 @@ nav > img {
 	}
 	.resumelink {
 		padding-left:20px;
+		margin-left:0;
 	}
 }
-/*Technologies*/
-.technologies {
+/*Hobbies*/
+.hobbies {
+	vertical-align:top;
+	float:left;
+	font-family: 'Montserrat', sans-serif;
 	align-self:center;
 	display:flex;
 	align-items:center;
 	flex-direction:column;
 	padding-top:10vh;
-	width:80vw;
+	width:45vw;
+	height:auto;
+}
+.hobbies p {
+	align-self:center;
+	text-align:center;
+	font-family:inherit;
+	font-weight:400;
+	font-size:3vw;
+	line-height:7vh;
+	margin-top:0;
+}
+.hobbies .hobbies-title{
+	padding:10px;
+	font-size:5vw;
+	font-weight:100;
+	font-family:inherit;
+	border-bottom: 1px solid black;
+	margin-bottom:40px;
+	margin-top:0;
+}
+div span {
+	margin:15px 5px;
+}
+/**/
+/*Technologies*/
+.technologies {
+	float:right;
+	font-family: 'Montserrat', sans-serif;
+	align-self:center;
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+	padding-top:10vh;
+	width:45vw;
+	height:auto;
 }
 .technologies .technologies-title{
 	padding:10px;
@@ -337,18 +385,30 @@ nav > img {
 	font-family:inherit;
 	border-bottom: 1px solid black;
 	margin-bottom:40px;
+	margin-top:0;
 }
-.technologies .technologies-container {
-	font-size:6vw;
-	margin-top:1vh;
+.technologies p{
+	text-align:center;
+	font-family:inherit;
+	font-weight:400;
+	font-size:3vw;
+	line-height:7vh;
+	margin-top:0;
 }
+/*Scaling hobbies and technologies fonts*/
 @media screen and (max-width: 900px) {
-	.technologies {
-		width:100vw;
+	.hobbies p{
+		font-size:4vw;
 	}
+	.technologies p{
+		font-size:4vw;
+	}
+
 }
+
 /*Projects*/
 .projects {
+	font-family: 'Montserrat', sans-serif;
 	align-self:center;
 	display:flex;
 	align-items:center;
@@ -361,6 +421,7 @@ nav > img {
 	flex-direction:row;
 	justify-content:space-around;
 	flex-wrap:wrap;
+	width:100vw;
 }
 .projects img {
 	display: block;
@@ -407,3 +468,4 @@ nav > img {
 		width:100vw;
 	}
 }
+/*Contact Form*/
