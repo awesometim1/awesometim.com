@@ -85,7 +85,7 @@ nav > img {
     opacity: 1; 
 }
 /*Responsive*/
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
 	nav > img {
 		height:15vh;
 	}
@@ -133,10 +133,11 @@ nav > img {
 		width:100%;
 		display:block;
 		text-align:center;
+		padding:0 !important;
 	}
 }
 /*Dropdown*/
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
 	nav.dropdown {
 		height:100vh;
 		background-color:#000;
@@ -154,6 +155,23 @@ nav > img {
 	.links.dropdown {
 		height:85vh;
 	}
+	a.active {
+	    border:none !important;
+	}
+	.banner {
+        width:100%;
+		background-image:url("../img/galaxy_low.jpg");
+		background-position:center;
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		-o-background-size: contain;
+		background-size: contain;
+		height:100%;
+		overflow: hidden;
+		background-attachment: scroll!important;
+	    background-position: center center !important;
+	    background-size:100%;
+	}
 }
 /*Active Navbar link*/
 .active {
@@ -169,13 +187,14 @@ nav > img {
 	opacity:1;
 	background-image: url("../img/galaxy_low.jpg");
 	height:100vh;
+	background-attachment:scroll;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 	background-position:center;
 	background-size:cover;
 	z-index:-1;
 }
-.banner > h1 {
+.banner h1 {
 	margin:0;
 	font-size:5vw;
 	color:white;
@@ -197,7 +216,7 @@ nav > img {
 	display:inline-block;
 	align-self:center;
 	width:80vw;
-	border: 7px solid white;;
+	border: 7px solid white;
 	text-align:center;
 	color:white;
 	font-size:10vw;
@@ -220,17 +239,12 @@ nav > img {
 	to   { opacity: 1; }
 }
 
-/* Internet Explorer */
-@-ms-keyframes fadein {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
-
 /* Opera < 12.1 */
 @-o-keyframes fadein {
 	from { opacity: 0; }
 	to   { opacity: 1; }
 }
+
 /*Arrow Pointing down*/
 .banner i {
 	position:absolute;
@@ -258,26 +272,23 @@ nav > img {
 
 /* Firefox < 16 */
 @-moz-keyframes point {
-	from { top: 80vh; }
-	to   { top: 85vh; }
+	0% { top: 80vh; }
+	50%   { top: 85vh; }
+	100% { top: 80vh; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes point {
-	from { top: 80vh; }
-	to   { top: 85vh; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes point {
-	from { top: 80vh; }
-	to   { top: 85vh; }
+	0% { top: 80vh; }
+	50%   { top: 85vh; }
+	100% { top: 80vh; }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes point {
-	from { top: 80vh; }
-	to   { top: 85vh; }
+	0% { top: 80vh; }
+	50%   { top: 85vh; }
+	100% { top: 80vh; }
 }
 /*About Me*/
 .about {
@@ -322,11 +333,13 @@ nav > img {
 		width:100vw;
 	}
 	.about p {
+	    font-size:4vw;
 		padding-right:20px;
 		padding-left:20px;
 		line-height: 5vh;
 	}
 	.resumelink {
+	    font-size:3vw;
 		padding-left:20px;
 		margin-left:0;
 	}
@@ -467,5 +480,61 @@ div span {
 	.projects {
 		width:100vw;
 	}
+	.contact {
+	    background-attachment: scroll!important;
+	    background-position: center center !important;
+	    background-size:100%;
+	}
 }
 /*Contact Form*/
+.contact {
+	text-align:center;
+	font-family:'Montserrat', sans-serif;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+    margin:0 auto;
+    width:100vw;
+	color:black;
+	background-image: url("../img/galaxy_low.jpg");
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+}
+.contact h1 {
+	color:white;
+}
+.contact form {
+    margin:0 auto;
+    width:80vw;
+    background-color:transparent;
+    color:white;
+}
+
+/* Style the text boxes */
+.contact input {
+	width:35vw;
+	height:5vh;
+	padding:0;
+	border:none;
+	border-radius:1%;
+	margin:0;
+	background-color:white;
+	margin-top:3px;
+	font-size:0.9em;
+}
+.contact textarea { 
+	width:35vw;
+	padding:0;
+	border:none;
+	border-radius:1%
+}
+
+textarea {
+	height:100px;
+}
+.contact button {
+	align-self:center;
+	width:35vw;
+}
