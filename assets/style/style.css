@@ -485,9 +485,6 @@ div span {
 	    background-position: center center !important;
 	    background-size:100%;
 	}
-	.contact textarea, .contact input, .contact button { 
-		width:55vw !important;
-	}
 }
 /*Contact Form*/
 .contact {
@@ -534,13 +531,16 @@ div span {
 	width:35vw;
 	padding:0;
 	border:none;
-	border-radius:1%
+	border-radius:1%;
 	background-color:#D0D0D0;
 }
 
 textarea {
 	height:100px;
 	background-color:#E8E8E8;
+}
+.text-center {
+    text-align:center;
 }
 .contact button {
 	width:35vw;
