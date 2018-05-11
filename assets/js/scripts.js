@@ -62,9 +62,13 @@ window.onscroll = function () {
     		$('.active').toggleClass('active');
     		$('#about-a').toggleClass('active');
     	}
-    	else if ($(window).scrollTop() >= $('#projects-link').offset().top - navbarHeight) {
+    	else if ($(window).scrollTop() >= $('#projects-link').offset().top - navbarHeight && $(window).scrollTop() <= $('#contact-link').offset().top - navbarHeight) {
     		$('.active').toggleClass('active');
     		$('#projects-a').toggleClass('active');
+    	}
+    	else if ($(window).scrollTop() >= $('#contact-link').offset().top - navbarHeight) {
+    		$('.active').toggleClass('active');
+    		$('#contact-a').toggleClass('active');
     	}
     }
 
@@ -74,7 +78,7 @@ window.onscroll = function () {
 $('a').click(function(){
 	aClick = false;
     $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top - navbarHeight + 2
+        scrollTop: $( $(this).attr('href') ).offset().top - navbarHeight
     }, 500, function() {
     	aClick = true;
     });

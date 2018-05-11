@@ -7,6 +7,13 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="description" content="Creative and professional Full Stack Web Developer/Student">
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+	<!--Captcha-->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script>
+		function onSubmit(token) {
+			document.getElementById("contact-form").submit();
+		}
+	</script>
 </head>
 <body>
 
@@ -114,7 +121,7 @@
 		</div>
 		<div class="contact" id="contact-link">
 			<h1>Contact Me</h1>
-			<form>
+			<form id ="contact-form" action="form.php" method="post"">
 				<label>Name</label>
 				<br>
 				<input name="name">
@@ -127,8 +134,7 @@
 				<br>
 				<textarea name="message"></textarea>
 				<br>
-				<input id="submit" name="submit" type="submit" value="Submit">
-
+				<button class="g-recaptcha" data-sitekey="6Lcbp1gUAAAAAAJuw_MMddappE-uKL9WtuWGF2fS" data-callback='onSubmit'><i class="ion-paper-airplane"></i></button>
 			</form>
 		</div>
 	</div>
