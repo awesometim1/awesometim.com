@@ -1,0 +1,25 @@
+/*Main body*/
+html, body {
+	width:100%;
+}
+body {
+	margin: 0 auto;
+	height:100vh;
+	background-color:white;
+	font-family: 'eurostile', sans-serif;
+}
+.banner {
+        width:100%;
+        color:white;
+		background-image:url("../img/galaxy_low.jpg");
+		background-position:center;
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		-o-background-size: contain;
+		background-size: contain;
+		height:100%;
+		overflow: hidden;
+		background-attachment: scroll !important;
+	    background-position: center center !important;
+	    background-size:100%;
+	}

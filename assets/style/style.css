@@ -156,6 +156,10 @@ nav > img {
 		height:85vh;
 	}
 	a.active {
+	    border-radius:5%;
+	    border:none !important;
+	}
+	.links a {
 	    border:none !important;
 	}
 	.banner {
@@ -543,7 +547,7 @@ textarea {
     text-align:center;
 }
 .contact button {
-	width:35vw;
+	width:100px;
 	height:5vh;
 	padding:0;
 	border:none;
